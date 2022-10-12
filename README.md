@@ -2,6 +2,7 @@
 graph LR
     Circom[Circom] --- R1CS[R1CS]
     Zokrates[ZoKrates] --- R1CS
+    Leo[Leo] --- R1CS
     R1CS --- snarkjs[snarkjs]
     snarkjs --- PLONK[PLONK]
     snarkjs --- Groth16[Groth16]
@@ -27,7 +28,7 @@ graph LR
     classDef color10 fill:#277da1
     
     class Framework framework
-    class Lang,Circom,Zokrates lang
+    class Lang,Circom,Zokrates,Leo lang
     class Compiler compiler
     class Intermediate,R1CS intermediate
     class Library,snarkjs lib
@@ -37,4 +38,5 @@ graph LR
     
     click Circom href "https://docs.circom.io/"
     click Zokrates href "https://zokrates.github.io/"
+    click Leo href "https://leo-lang.org/"
 ```
