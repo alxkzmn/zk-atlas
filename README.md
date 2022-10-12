@@ -33,30 +33,24 @@ graph TD
     Cairo --- RAP
     RAP ------ zkSTARK
     
-    subgraph Legend
-        direction LR
-        Lang([Language])---Framework([Framework])---Compiler([Compiler])---Intermediate([Intermediate Format])---Library([Library])---ProvingSystem([Proving System])---AlgebraicForm([Algebraic Form])---Tech([Technology])
-    end
-    
     classDef framework fill:#f94144,color:#fff
     classDef lang fill:#277da1,color:#fff
-    classDef compiler fill:#f8961e
-    classDef intermediate fill:#f9844a
-    classDef lib fill:#f9c74f
-    classDef provingSystem fill:#90be6d
-    classDef algForm fill:#43aa8b
+    classDef compiler fill:#f8961e,color:#000
+    classDef intermediate fill:#f9844a,color:#000
+    classDef lib fill:#f9c74f,color:#000
+    classDef provingSystem fill:#90be6d,color:#000
+    classDef algForm fill:#43aa8b,color:#000
     classDef tech fill:#4d908e,color:#fff
-    classDef color9 fill:#f3722c
-    classDef color10 fill:#577590
+    classDef color9 fill:#f3722c,color:#000
+    classDef color10 fill:#577590,color:#000
     
-    class Framework,SnarkyJS framework
-    class Lang,Circom,ZoKrates,Leo,Noir,Cairo,Lurk,Rust,TypeScript lang
-    class Compiler compiler
-    class Intermediate,R1CS,ACIR,RAP intermediate
-    class Library,snarkjs,Bellman lib
-    class ProvingSystem,Groth16,PLONK,Marlin,SnarkPack,Nova provingSystem
-    class AlgebraicForm,QAP algForm
-    class Tech,zkSNARK,zkSTARK tech
+    class SnarkyJS framework
+    class Circom,ZoKrates,Leo,Noir,Cairo,Lurk,Rust,TypeScript lang
+    class R1CS,ACIR,RAP intermediate
+    class snarkjs,Bellman lib
+    class Groth16,PLONK,Marlin,SnarkPack,Nova provingSystem
+    class QAP algForm
+    class zkSNARK,zkSTARK tech
     
     click Circom href "https://docs.circom.io/"
     click ZoKrates href "https://zokrates.github.io/"
@@ -77,6 +71,35 @@ graph TD
     click Groth16 href "https://eprint.iacr.org/2016/260.pdf"
     click Marlin href "https://eprint.iacr.org/2019/1047.pdf"
     click zkSTARK href "https://eprint.iacr.org/2018/046.pdf"
+```
+```mermaid
+graph LR
+    subgraph Legend
+        direction LR
+        Lang([Language])---Framework([Framework])---Compiler([Compiler])---Intermediate([Intermediate Format])---Library([Library])---ProvingSystem([Proving System])---AlgebraicForm([Algebraic Form])---Tech([Technology])
+    end
+    
+    linkStyle default stroke-width:0px;
+    
+    classDef framework fill:#f94144,color:#fff
+    classDef lang fill:#277da1,color:#fff
+    classDef compiler fill:#f8961e,color:#000
+    classDef intermediate fill:#f9844a,color:#000
+    classDef lib fill:#f9c74f,color:#000
+    classDef provingSystem fill:#90be6d,color:#000
+    classDef algForm fill:#43aa8b,color:#000
+    classDef tech fill:#4d908e,color:#fff
+    classDef color9 fill:#f3722c,color:#000
+    classDef color10 fill:#577590,color:#000
+    
+    class Framework framework
+    class Lang lang
+    class Compiler compiler
+    class Intermediate intermediate
+    class Library lib
+    class ProvingSystem provingSystem
+    class AlgebraicForm algForm
+    class Tech tech
 ```
 ---
 Inspired by [https://harryr.github.io/zklangs/](https://harryr.github.io/zklangs/).
