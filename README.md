@@ -3,7 +3,11 @@
 Most of the blocks are clickable!
 
 ```mermaid
+%% This is a comment! TD means "Top-Down"
 graph TD
+%% No need to "define" a new block in a special way, the first mention is the definition.
+%% The connection length is determined by the number of dashes, but the minimum is three ---.
+%% If you need to skip a level, use more than three dashes.
     Rust ------ Bellman
     Rust ------ arkworks
     Rust ----- Halo2
@@ -46,6 +50,9 @@ graph TD
     Cairo ---- RAP
     RAP ------- zkSTARK
     
+    %% Visual style definition. Color here refers to text color.
+    %% If you want to modify a style, please modify the corresponding style of the legend below.
+    
     classDef framework fill:#f94144,color:#fff
     classDef lang fill:#277da1,color:#fff
     classDef compiler fill:#f8961e,color:#000
@@ -57,6 +64,7 @@ graph TD
     classDef color9 fill:#f3722c,color:#000
     classDef color10 fill:#577590,color:#000
     
+    %% These are class assignments. There should be no spaces around commas.
     class SnarkyJS framework
     class Circom,ZoKrates,Leo,Noir,Cairo,Lurk,Rust,TypeScript lang
     class R1CS,ACIR,RAP intermediate
@@ -65,6 +73,7 @@ graph TD
     class QAP algForm
     class zkSNARK,zkSTARK tech
     
+    %% These are onclicks. Docs say you can even use an arbitrary JS callback.
     click Circom href "https://docs.circom.io/"
     click ZoKrates href "https://zokrates.github.io/"
     click Leo href "https://leo-lang.org/"
@@ -91,12 +100,14 @@ graph TD
     click ripp href "https://github.com/arkworks-rs/ripp"
 ```
 ```mermaid
+%% This legend graph is separate because I couldn't find a way to force the subgrapg to be rendered within the main graph in the same position
 graph LR
     subgraph Legend
         direction LR
         Lang([Language])---Framework([Framework])---Compiler([Compiler])---Intermediate([Intermediate Format])---Library([Library])---ProvingSystem([Proving System])---AlgebraicForm([Algebraic Form])---Tech([Technology])
     end
     
+    %% This styling makes the connections invisible
     linkStyle default stroke-width:0px;
     
     classDef framework fill:#f94144,color:#fff
@@ -121,4 +132,4 @@ graph LR
 ```
 ---
 Inspired by [https://harryr.github.io/zklangs/](https://harryr.github.io/zklangs/).
-This diagram is using [Mermaid syntax](https://mermaid-js.github.io/mermaid/#/).
+This diagram uses [Mermaid syntax](https://mermaid-js.github.io/mermaid/#/). Its learning curve is relatively shallow, so the comments inside this file would probably be enough for you to start contributing.
