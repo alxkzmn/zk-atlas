@@ -46,4 +46,5 @@ graph TD
     click Zokrates href "https://zokrates.github.io/"
     click Leo href "https://leo-lang.org/"
     click Noir href "https://docs.aztec.network/developers/noir"
+    click snarkjs href "https://github.com/iden3/snarkjs"
 ```
