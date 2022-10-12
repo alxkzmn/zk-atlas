@@ -1,22 +1,26 @@
+# A(n almost) complete atlas of Zero-Knowledge Proof technologies
+
 ```mermaid
 graph TD
     subgraph Legend
         Framework([Framework])---Lang([Language])---Compiler([Compiler])---Intermediate([Intermediate Format])---Library([Library])---ProvingSystem([Proving System])---AlgebraicForm([Algebraic Form])---Tech([Technology])
     end
+    Rust[Rust] ---- Bellman[Bellman]
     Circom[Circom] --- R1CS[R1CS]
-    Noir[Noir] --- ACIR[ACIR]
-    Zokrates[ZoKrates] --- R1CS
-    Leo[Leo] --- R1CS
     snarkjs --- PLONK[PLONK]
     snarkjs --- Groth16[Groth16]
+    R1CS --- snarkjs
+    R1CS --- PLONK
+    R1CS --- Groth16
+    Zokrates[ZoKrates] --- R1CS
+    Leo[Leo] --- R1CS
+    Bellman --- PLONK
+    Noir[Noir] --- ACIR[ACIR]
     Marlin[Marlin] --- QAP
     Lurk ----- Groth16
     Lurk ----- SnarkPack[SnarkPack+]
     Lurk ----- Nova[Nova]
-    Circom --- snarkjs
-    R1CS --- snarkjs
-    R1CS --- PLONK
-    R1CS --- Groth16
+    Circom ---- snarkjs 
     Groth16 --- QAP[QAP]
     PLONK --- QAP
     SnarkPack --- QAP
@@ -40,10 +44,10 @@ graph TD
     classDef color10 fill:#577590
     
     class Framework framework
-    class Lang,Circom,Zokrates,Leo,Noir,Cairo,Lurk lang
+    class Lang,Circom,Zokrates,Leo,Noir,Cairo,Lurk,Rust lang
     class Compiler compiler
     class Intermediate,R1CS,ACIR,RAP intermediate
-    class Library,snarkjs lib
+    class Library,snarkjs,Bellman lib
     class ProvingSystem,Groth16,PLONK,Marlin,SnarkPack,Nova provingSystem
     class AlgebraicForm,QAP algForm
     class Tech,zkSNARK,zkSTARK tech
@@ -58,4 +62,7 @@ graph TD
     click Lurk href "https://github.com/lurk-lang"
     click SnarkPack href "https://research.protocol.ai/blog/2021/snarkpack-how-to-aggregate-snarks-efficiently/"
     click Nova href "https://github.com/microsoft/Nova"
+    click Bellman href "https://github.com/matter-labs/bellman"
+    click Rust href "https://www.rust-lang.org/"
 ```
+Inspired by [https://harryr.github.io/zklangs/](https://harryr.github.io/zklangs/)
