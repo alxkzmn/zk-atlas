@@ -4,37 +4,45 @@ Most of the blocks are clickable!
 
 ```mermaid
 graph TD
-    TypeScript --- SnarkyJS
-    Rust ---- Bellman
-    Rust --- Halo2
-    Circom ---- snarkjs 
-    Circom --- R1CS
+    Rust ------ Bellman
+    Rust ------ arkworks
+    Rust ----- Halo2
+    Halo2 --- UltraPLONK
     snarkjs --- PLONK
-    snarkjs --- Groth16
-    R1CS --- snarkjs
+    arkworks --- Groth16
+    Bellman --- PLONK
+    R1CS ---- snarkjs
     R1CS --- PLONK
     R1CS --- Groth16
-    ZoKrates --- R1CS
-    Leo --- R1CS
-    Bellman --- PLONK
-    Halo2 --- UltraPLONK
-    Noir --- ACIR
-    Marlin --- QAP
-    Lurk ----- Groth16
-    Lurk ----- SnarkPack[SnarkPack+]
-    Lurk ----- Nova
+    Lurk ------- Groth16
+    TypeScript --- SnarkyJS
+    snarkjs --- Groth16
+    R1CS ---- arkworks
+    SnarkyJS ------ PLONK
+    Circom ----- snarkjs 
+    arkworks --- Marlin
+    arkworks --- gm17
+    arkworks --- gemini
+    gm17 --- QAP
+    gemini --- QAP
     Groth16 --- QAP
-    PLONK --- QAP
-    SnarkPack --- QAP
     Nova --- QAP
-    ACIR ---- PLONK
-    ACIR ---- Groth16
-    ACIR ---- Marlin
-    QAP --- zkSNARK
+    Noir ---- ACIR
+    Marlin --- QAP
+    Lurk ------- SnarkPack[SnarkPack+]
+    Lurk ------- Nova
+    Leo ---- R1CS
+    ZoKrates ---- R1CS
+    Circom ---- R1CS
+    SnarkPack --- QAP
+    PLONK --- QAP
     UltraPLONK ---- zkSNARK
-    SnarkyJS ---- PLONK
-    Cairo --- RAP
-    RAP ------ zkSTARK
+    ACIR ----- PLONK
+    ACIR ----- Groth16
+    ACIR ----- Marlin
+    QAP --- zkSNARK
+    Cairo ---- RAP
+    RAP ------- zkSTARK
     
     classDef framework fill:#f94144,color:#fff
     classDef lang fill:#277da1,color:#fff
@@ -50,8 +58,8 @@ graph TD
     class SnarkyJS framework
     class Circom,ZoKrates,Leo,Noir,Cairo,Lurk,Rust,TypeScript lang
     class R1CS,ACIR,RAP intermediate
-    class snarkjs,Bellman,Halo2 lib
-    class Groth16,PLONK,Marlin,SnarkPack,Nova,UltraPLONK provingSystem
+    class snarkjs,Bellman,Halo2,arkworks lib
+    class Groth16,PLONK,Marlin,SnarkPack,Nova,UltraPLONK,gm17,gemini provingSystem
     class QAP algForm
     class zkSNARK,zkSTARK tech
     
@@ -75,6 +83,9 @@ graph TD
     click Marlin href "https://eprint.iacr.org/2019/1047.pdf"
     click zkSTARK href "https://eprint.iacr.org/2018/046.pdf"
     click Halo2 href "https://zcash.github.io/halo2/index.html"
+    click arkworks href "https://github.com/arkworks-rs/"
+    click gm17 href "https://github.com/arkworks-rs/gm17"
+    click gemini href "https://github.com/arkworks-rs/gemini"
 ```
 ```mermaid
 graph LR
