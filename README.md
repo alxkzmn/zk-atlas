@@ -1,7 +1,7 @@
 ```mermaid
 graph LR
     Circom[Circom] --- R1CS[R1CS]
-    Zokrates[Zokrates] --- R1CS
+    Zokrates[ZoKrates] --- R1CS
     R1CS --- snarkjs[snarkjs]
     snarkjs --- PLONK[PLONK]
     snarkjs --- Groth16[Groth16]
@@ -36,4 +36,5 @@ graph LR
     class Tech,zkSNARK tech
     
     click Circom href "https://docs.circom.io/"
+    click Zokrates href "https://zokrates.github.io/"
 ```
