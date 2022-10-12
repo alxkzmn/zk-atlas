@@ -59,7 +59,7 @@ graph TD
     class Tech,zkSNARK,zkSTARK tech
     
     click Circom href "https://docs.circom.io/"
-    click Zokrates href "https://zokrates.github.io/"
+    click ZoKrates href "https://zokrates.github.io/"
     click Leo href "https://leo-lang.org/"
     click Noir href "https://docs.aztec.network/developers/noir"
     click snarkjs href "https://github.com/iden3/snarkjs"
@@ -71,6 +71,12 @@ graph TD
     click Bellman href "https://github.com/matter-labs/bellman"
     click Rust href "https://www.rust-lang.org/"
     click SnarkyJS href "https://github.com/o1-labs/snarkyjs"
+    click TypeScript href "https://www.typescriptlang.org/"
+    click ACIR href "https://noir-lang.github.io/book/acir.html"
+    click PLONK href "https://eprint.iacr.org/2019/953.pdf"
+    click Groth16 href "https://eprint.iacr.org/2016/260.pdf"
+    click Marlin href "https://eprint.iacr.org/2019/1047.pdf"
+    click zkSTARK href "https://eprint.iacr.org/2018/046.pdf"
 ```
 ---
 Inspired by [https://harryr.github.io/zklangs/](https://harryr.github.io/zklangs/).
