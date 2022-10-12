@@ -6,6 +6,7 @@ Most of the blocks are clickable!
 graph TD
     TypeScript --- SnarkyJS
     Rust ---- Bellman
+    Rust --- Halo2
     Circom ---- snarkjs 
     Circom --- R1CS
     snarkjs --- PLONK
@@ -16,6 +17,7 @@ graph TD
     ZoKrates --- R1CS
     Leo --- R1CS
     Bellman --- PLONK
+    Halo2 --- UltraPLONK
     Noir --- ACIR
     Marlin --- QAP
     Lurk ----- Groth16
@@ -29,6 +31,7 @@ graph TD
     ACIR ---- Groth16
     ACIR ---- Marlin
     QAP --- zkSNARK
+    UltraPLONK ---- zkSNARK
     SnarkyJS ---- PLONK
     Cairo --- RAP
     RAP ------ zkSTARK
@@ -47,8 +50,8 @@ graph TD
     class SnarkyJS framework
     class Circom,ZoKrates,Leo,Noir,Cairo,Lurk,Rust,TypeScript lang
     class R1CS,ACIR,RAP intermediate
-    class snarkjs,Bellman lib
-    class Groth16,PLONK,Marlin,SnarkPack,Nova provingSystem
+    class snarkjs,Bellman,Halo2 lib
+    class Groth16,PLONK,Marlin,SnarkPack,Nova,UltraPLONK provingSystem
     class QAP algForm
     class zkSNARK,zkSTARK tech
     
@@ -71,6 +74,7 @@ graph TD
     click Groth16 href "https://eprint.iacr.org/2016/260.pdf"
     click Marlin href "https://eprint.iacr.org/2019/1047.pdf"
     click zkSTARK href "https://eprint.iacr.org/2018/046.pdf"
+    click Halo2 href "https://zcash.github.io/halo2/index.html"
 ```
 ```mermaid
 graph LR
