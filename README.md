@@ -21,8 +21,10 @@ graph TD
     SnarkyJS ------ PLONK
     Circom ----- snarkjs 
     arkworks --- Marlin
+    arkworks --- ripp
     arkworks --- gm17
     arkworks --- gemini
+    ripp --- QAP
     gm17 --- QAP
     gemini --- QAP
     Groth16 --- QAP
@@ -59,7 +61,7 @@ graph TD
     class Circom,ZoKrates,Leo,Noir,Cairo,Lurk,Rust,TypeScript lang
     class R1CS,ACIR,RAP intermediate
     class snarkjs,Bellman,Halo2,arkworks lib
-    class Groth16,PLONK,Marlin,SnarkPack,Nova,UltraPLONK,gm17,gemini provingSystem
+    class Groth16,PLONK,Marlin,SnarkPack,Nova,UltraPLONK,gm17,gemini,ripp provingSystem
     class QAP algForm
     class zkSNARK,zkSTARK tech
     
@@ -86,6 +88,7 @@ graph TD
     click arkworks href "https://github.com/arkworks-rs/"
     click gm17 href "https://github.com/arkworks-rs/gm17"
     click gemini href "https://github.com/arkworks-rs/gemini"
+    click ripp href "https://github.com/arkworks-rs/ripp"
 ```
 ```mermaid
 graph LR
