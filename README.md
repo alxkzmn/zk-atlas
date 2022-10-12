@@ -1,38 +1,44 @@
 # A(n almost) complete atlas of Zero-Knowledge Proof technologies
 
+Most of the blocks are clickable!
+
 ```mermaid
 graph TD
-    subgraph Legend
-        Framework([Framework])---Lang([Language])---Compiler([Compiler])---Intermediate([Intermediate Format])---Library([Library])---ProvingSystem([Proving System])---AlgebraicForm([Algebraic Form])---Tech([Technology])
-    end
-    Rust[Rust] ---- Bellman[Bellman]
-    Circom[Circom] --- R1CS[R1CS]
-    snarkjs --- PLONK[PLONK]
-    snarkjs --- Groth16[Groth16]
+    TypeScript --- SnarkyJS
+    Rust ---- Bellman
+    Circom ---- snarkjs 
+    Circom --- R1CS
+    snarkjs --- PLONK
+    snarkjs --- Groth16
     R1CS --- snarkjs
     R1CS --- PLONK
     R1CS --- Groth16
-    Zokrates[ZoKrates] --- R1CS
-    Leo[Leo] --- R1CS
+    ZoKrates --- R1CS
+    Leo --- R1CS
     Bellman --- PLONK
-    Noir[Noir] --- ACIR[ACIR]
-    Marlin[Marlin] --- QAP
+    Noir --- ACIR
+    Marlin --- QAP
     Lurk ----- Groth16
     Lurk ----- SnarkPack[SnarkPack+]
-    Lurk ----- Nova[Nova]
-    Circom ---- snarkjs 
-    Groth16 --- QAP[QAP]
+    Lurk ----- Nova
+    Groth16 --- QAP
     PLONK --- QAP
     SnarkPack --- QAP
     Nova --- QAP
-    ACIR ---- Marlin
     ACIR ---- PLONK
     ACIR ---- Groth16
-    QAP --- zkSNARK[zkSNARK]
-    Cairo[Cairo] --- RAP[RAP]
-    RAP ------ zkSTARK[zkSTARK]
+    ACIR ---- Marlin
+    QAP --- zkSNARK
+    SnarkyJS ---- PLONK
+    Cairo --- RAP
+    RAP ------ zkSTARK
     
-    classDef framework fill:#f94144
+    subgraph Legend
+        direction LR
+        Lang([Language])---Framework([Framework])---Compiler([Compiler])---Intermediate([Intermediate Format])---Library([Library])---ProvingSystem([Proving System])---AlgebraicForm([Algebraic Form])---Tech([Technology])
+    end
+    
+    classDef framework fill:#f94144,color:#fff
     classDef lang fill:#277da1,color:#fff
     classDef compiler fill:#f8961e
     classDef intermediate fill:#f9844a
@@ -43,8 +49,8 @@ graph TD
     classDef color9 fill:#f3722c
     classDef color10 fill:#577590
     
-    class Framework framework
-    class Lang,Circom,Zokrates,Leo,Noir,Cairo,Lurk,Rust lang
+    class Framework,SnarkyJS framework
+    class Lang,Circom,ZoKrates,Leo,Noir,Cairo,Lurk,Rust,TypeScript lang
     class Compiler compiler
     class Intermediate,R1CS,ACIR,RAP intermediate
     class Library,snarkjs,Bellman lib
@@ -64,5 +70,8 @@ graph TD
     click Nova href "https://github.com/microsoft/Nova"
     click Bellman href "https://github.com/matter-labs/bellman"
     click Rust href "https://www.rust-lang.org/"
+    click SnarkyJS href "https://github.com/o1-labs/snarkyjs"
 ```
-Inspired by [https://harryr.github.io/zklangs/](https://harryr.github.io/zklangs/)
+---
+Inspired by [https://harryr.github.io/zklangs/](https://harryr.github.io/zklangs/).
+This diagram is using [Mermaid syntax](https://mermaid-js.github.io/mermaid/#/).
