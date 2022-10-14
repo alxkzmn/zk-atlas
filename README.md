@@ -16,14 +16,18 @@ graph TD
     arkworks --- Groth16
     Bellman --- PLONK
     R1CS ---- snarkjs
+    R1CS ---- gnark
     R1CS --- PLONK
     R1CS --- Groth16
     Lurk ------- Groth16
     TypeScript --- SnarkyJS
     snarkjs --- Groth16
+    gnark --- Groth16
+    gnark --- PLONK
     R1CS ---- arkworks
     SnarkyJS ------ PLONK
-    Circom ----- snarkjs 
+    Circom ----- snarkjs
+    Go ------ gnark
     arkworks --- Marlin
     arkworks --- ripp
     arkworks --- gm17
@@ -66,9 +70,9 @@ graph TD
     
     %% These are class assignments. There should be no spaces around commas.
     class SnarkyJS framework
-    class Circom,ZoKrates,Leo,Noir,Cairo,Lurk,Rust,TypeScript lang
+    class Circom,ZoKrates,Leo,Noir,Cairo,Lurk,Rust,TypeScript,Go lang
     class R1CS,ACIR,RAP intermediate
-    class snarkjs,Bellman,Halo2,arkworks lib
+    class snarkjs,Bellman,Halo2,arkworks,gnark lib
     class Groth16,PLONK,Marlin,SnarkPack,Nova,UltraPLONK,gm17,gemini,ripp provingSystem
     class QAP algForm
     class zkSNARK,zkSTARK tech
@@ -98,6 +102,8 @@ graph TD
     click gm17 href "https://github.com/arkworks-rs/gm17"
     click gemini href "https://github.com/arkworks-rs/gemini"
     click ripp href "https://github.com/arkworks-rs/ripp"
+    click Go href "https://go.dev/"
+    click gnark href "https://docs.gnark.consensys.net/en/latest/"
 ```
 ```mermaid
 %% This legend graph is separate because I couldn't find a way to force the subgrapg to be rendered within the main graph in the same position
