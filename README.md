@@ -8,51 +8,51 @@ graph TD
 %% No need to "define" a new block in a special way, the first mention is the definition.
 %% The connection length is determined by the number of dashes, but the minimum is three ---.
 %% If you need to skip a level, use more than three dashes.
-    Rust ------ Bellman
-    Rust ------ arkworks
-    Rust ----- Halo2
-    Halo2 --- UltraPLONK
-    snarkjs --- PLONK
-    arkworks --- Groth16
-    Bellman --- PLONK
-    R1CS ---- snarkjs
-    R1CS ---- gnark
+    Rust --- Bellman
+    Rust --- arkworks
+    Rust --- Halo2
+    Halo2 ---- UltraPLONK
+    arkworks ---- Groth16
     R1CS --- PLONK
-    R1CS --- Groth16
-    Lurk ------- Groth16
+    ACIR --- PLONK
+    Bellman ---- PLONK
+    Lurk ----- Nova
+    Lurk ----- SnarkPack[SnarkPack+]
     TypeScript --- SnarkyJS
-    snarkjs --- Groth16
-    gnark --- Groth16
-    gnark --- PLONK
-    R1CS ---- arkworks
-    SnarkyJS ------ PLONK
-    Circom ----- snarkjs
-    Go ------ gnark
-    arkworks --- Marlin
-    arkworks --- ripp
-    arkworks --- gm17
-    arkworks --- gemini
+    Lurk ----- Groth16
+    snarkjs ---- Groth16
+    snarkjs ---- PLONK
+    gnark ---- Groth16
+    R1CS --- Groth16
+    gnark ---- PLONK
+    arkworks --- R1CS
+    SnarkyJS ---- PLONK
+    Circom --- snarkjs
+    Go --- gnark
+    arkworks ---- Marlin
+    arkworks ---- ripp
+    arkworks ---- gm17
+    arkworks ---- gemini
     ripp --- QAP
     gm17 --- QAP
     gemini --- QAP
     Groth16 --- QAP
     Nova --- QAP
     Noir ---- ACIR
+    SnarkPack --- QAP
     Marlin --- QAP
-    Lurk ------- SnarkPack[SnarkPack+]
-    Lurk ------- Nova
     Leo ---- R1CS
     ZoKrates ---- R1CS
+    snarkjs --- R1CS
     Circom ---- R1CS
-    SnarkPack --- QAP
+    gnark --- R1CS
     PLONK --- QAP
     UltraPLONK ---- zkSNARK
-    ACIR ----- PLONK
-    ACIR ----- Groth16
-    ACIR ----- Marlin
+    ACIR --- Marlin
+    ACIR --- Groth16
     QAP --- zkSNARK
     Cairo ---- RAP
-    RAP ------- zkSTARK
+    RAP ----- zkSTARK
     
     %% Visual style definition. Color here refers to text color.
     %% If you want to modify a style, please modify the corresponding style of the legend below.
